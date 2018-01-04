@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Client">
+    <head>
+        <title>Web Sockets Template</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="client.js"></script>
+    </head>
+    <body ng-controller="ClientVM as vm">
+        <div class="jumbotron">
+            <h1>Express web sockets chat app template</h1>
+            <ul>
+                <li ng-repeat="chat in vm.chats">
+                    {{ chat }}
+                </li>
+            </ul>
+            <hr />
+            <div class="input-group">
+                <input type="text" size="50" name="chatbox" placeholder="Please enter your message here" ng-model="vm.message" />
+                <button class="input-group-addon" type="button" ng-click="vm.send()">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>
